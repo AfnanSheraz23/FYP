@@ -1,0 +1,37 @@
+to start pocketbase server run:
+./pocketbase serve 
+
+ Backend (Express + MongoDB)
+
+    server.js or app.js (main Express entry file)
+
+    The controller or route files where:
+
+        Answers are posted
+
+        Votes are cast
+
+        Messages are sent
+
+2. Frontend (React)
+
+    The component or logic where:
+
+        Questions and answers are rendered
+
+        User sees notifications (if any UI exists)
+
+    How you're currently using Socket.IO, if applicable
+  3 . Your Schema or Models (optional but helpful)
+
+    Mongoose schemas for:
+
+        Questions
+
+        Answers
+
+        Votes (if separate)
+
+        Messages
+
+        Users

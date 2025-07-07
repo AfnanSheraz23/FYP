@@ -1,0 +1,68 @@
+/* Define CSS variables for light and dark themes */
+:root {
+  --input-bg: #ffffff;
+  --input-text: #000000;
+  --input-border: #eaeaea;
+  --input-placeholder: #999999;
+  --button-bg: #f0f0f0;
+  --button-icon: #333333;
+}
+
+.dark {
+  --input-bg: #1a1a1a;
+  --input-text: #ffffff;
+  --input-border: #444444;
+  --input-placeholder: #777777;
+  --button-bg: #333333;
+  --button-icon: #ffffff;
+}
+
+/* Style the react-emoji component */
+.react-emoji {
+  /* Container for the input */
+  .react-input-emoji--container {
+    background-color: var(--input-bg) !important;
+    border-color: var(--input-border) !important;
+    border-radius: 21px;
+    font-size: 15px;
+    font-family: sans-serif;
+  }
+
+  /* Input field */
+  .react-input-emoji--input {
+    color: var(--input-text) !important;
+    background-color: transparent !important; /* Inherit from container */
+    outline: none; /* Remove default outline */
+  }
+
+  /* Placeholder */
+  .react-input-emoji--placeholder {
+    color: var(--input-placeholder) !important;
+  }
+
+  /* Emoji button */
+  .react-input-emoji--button {
+    background-color: var(--button-bg) !important;
+    border: 1px solid var(--input-border) !important;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+  }
+
+  /* Button icon */
+  .react-input-emoji--button--icon {
+    fill: var(--button-icon) !important;
+  }
+}
+
+/* Optional: System-level dark mode support */
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --input-bg: #1a1a1a;
+    --input-text: #ffffff;
+    --input-border: #444444;
+    --input-placeholder: #777777;
+    --button-bg: #333333;
+    --button-icon: #ffffff;
+  }
+} */

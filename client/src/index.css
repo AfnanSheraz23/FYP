@@ -1,0 +1,275 @@
+:root {
+  --ff-poppins: "Poppins", sans-serif;
+
+  --fs-200: clamp(0.6944rem, 0.6507rem + 0.1866vi, 0.8rem);
+  --fs-300: clamp(0.8333rem, 0.8057rem + 0.1179vi, 0.9rem);
+  --fs-400: clamp(1rem, 0.9482rem + 0.221vi, 1.125rem);
+  --fs-500: clamp(1.2rem, 1.1145rem + 0.3646vi, 1.4063rem);
+  --fs-600: clamp(1.44rem, 1.3083rem + 0.5619vi, 1.7578rem);
+  --fs-700: clamp(1.728rem, 1.5336rem + 0.8296vi, 2.1973rem);
+  --fs-800: clamp(2.0736rem, 1.7334rem + 1.7011vi, 3.0518rem);
+  --fs-900: clamp(2.4883rem, 1.9133rem + 2.4534vi, 3.8147rem);
+
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semi-bold: 600;
+  --fw-bold: 700;
+  --fw-black: 900;
+}
+
+.ff-poppins {
+  font-family: "Poppins", sans-serif;
+}
+
+.fs-200 {
+  font-size: clamp(0.6944rem, 0.6507rem + 0.1866vi, 0.8rem);
+}
+
+.fs-300 {
+  font-size: clamp(0.8333rem, 0.8057rem + 0.1179vi, 0.9rem);
+}
+
+.fs-400 {
+  font-size: clamp(1rem, 0.9482rem + 0.221vi, 1.125rem);
+}
+
+.fs-500 {
+  font-size: clamp(1.2rem, 1.1145rem + 0.3646vi, 1.4063rem);
+}
+
+.fs-600 {
+  font-size: clamp(1.44rem, 1.3083rem + 0.5619vi, 1.7578rem);
+}
+
+.fs-700 {
+  font-size: clamp(1.728rem, 1.5336rem + 0.8296vi, 2.1973rem);
+}
+
+.fs-800 {
+  font-size: clamp(2.0736rem, 1.7334rem + 1.7011vi, 3.0518rem);
+}
+
+.fs-900 {
+  font-size: clamp(2.4883rem, 1.9133rem + 2.4534vi, 3.8147rem);
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --breakpoint-lg: 56.25rem;
+  --breakpoint-md: 44rem;
+  --breakpoint-sm: 28.125rem;
+}
+
+* {
+  @apply transition-colors duration-300;
+}
+
+html {
+  background-color: #f3f4f6;
+}
+
+html.dark {
+  background-color: #111827;
+}
+
+body {
+  font-family: var(--ff-poppins);
+  font-size: var(--fs-400);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+button {
+  border-radius: 4px;
+  margin-block: 1rem;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.black-button {
+  background-color: black;
+  color: white;
+}
+
+.black-button:hover {
+  color: black;
+  background-color: white;
+  border: 1px solid;
+}
+
+.container {
+  display: flex;
+  max-width: 1280px;
+  margin: 1.5rem auto;
+  min-height: 80vh;
+}
+
+@media (max-width: 450px) {
+  .container {
+    margin: 0;
+    display: block;
+  }
+
+  .CHAT-LIST {
+    width: 95vmin;
+    height: 80vmax;
+  }
+}
+
+.question:hover {
+  box-shadow: 2px 4px 6px;
+}
+
+.label:focus {
+  outline: none;
+  outline: 3px solid goldenrod;
+}
+
+input[type="file"] {
+  position: relative;
+}
+
+input[type="file"]::file-selector-button {
+  width: 136px;
+  color: transparent;
+}
+
+/* Faked label styles and icon */
+input[type="file"]::before {
+  position: absolute;
+  pointer-events: none;
+  top: 18px;
+  left: 16px;
+  height: 20px;
+  width: 20px;
+  content: "";
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23000'%3E%3Cpath d='M18 15v3H6v-3H4v3c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-3h-2zM7 9l1.41 1.41L11 7.83V16h2V7.83l2.59 2.58L17 9l-5-5-5 5z'/%3E%3C/svg%3E");
+}
+
+/* Dark mode icon */
+.dark input[type="file"]::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23d1d5db'%3E%3Cpath d='M18 15v3H6v-3H4v3c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-3h-2zM7 9l1.41 1.41L11 7.83V16h2V7.83l2.59 2.58L17 9l-5-5-5 5z'/%3E%3C/svg%3E");
+}
+
+input[type="file"]::after {
+  position: absolute;
+  pointer-events: none;
+  top: 15px;
+  left: 40px;
+  color: #000;
+  content: "Upload File";
+}
+
+/* Dark mode text */
+.dark input[type="file"]::after {
+  color: #d1d5db; /* Light gray for dark mode */
+}
+
+/* File upload button */
+input[type="file"]::file-selector-button {
+  border-radius: 4px;
+  padding: 0 16px;
+  height: 40px;
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
+  margin-right: 16px;
+  transition: background-color 200ms;
+}
+
+/* Dark mode button */
+.dark input[type="file"]::file-selector-button {
+  background-color: #1f2937; /* Dark gray background */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+  box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.1);
+}
+
+/* File upload button hover state */
+input[type="file"]::file-selector-button:hover {
+  background-color: #f3f4f6; /* Light gray hover */
+}
+
+/* Dark mode button hover state */
+.dark input[type="file"]::file-selector-button:hover {
+  background-color: #374151; /* Slightly lighter gray for hover */
+}
+
+/* File upload button active state */
+input[type="file"]::file-selector-button:active {
+  background-color: #e5e7eb; /* Light gray active */
+}
+
+/* Dark mode button active state */
+.dark input[type="file"]::file-selector-button:active {
+  background-color: #4b5563; /* Darker gray for active */
+}
+
+.input {
+  padding: 8px;
+  border: 1px solid #d1d5db; /* Gray border for light mode */
+  background-color: #ffffff; /* White background */
+  color: #1f2937; /* Dark text */
+}
+
+/* Dark mode input styles */
+.dark .input {
+  border: 1px solid #4b5563; /* Darker border */
+  background-color: #1f2937; /* Dark background */
+  color: #d1d5db; /* Light text */
+}
+
+/* Focus styles for dark mode */
+.dark .input:focus {
+  outline: none;
+  border-color: #60a5fa; /* Lighter blue for dark mode */
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.3); /* Lighter blue glow */
+  background-color: #374151; /* Slightly lighter dark background */
+  color: #d1d5db; /* Keep light text */
+}
+
+/* Autofill styles for light mode */
+input[type="email"]:-webkit-autofill,
+input[type="password"]:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset; /* Force white background */
+  -webkit-text-fill-color: #1f2937; /* Force gray-900 text */
+  border: 1px solid #d1d5db; /* gray-300 border */
+}
+
+/* Autofill styles for dark mode */
+.dark input[type="email"]:-webkit-autofill,
+.dark input[type="password"]:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #374151 inset; /* Force gray-700 background */
+  -webkit-text-fill-color: #d1d5db; /* Force gray-100 text */
+  border: 1px solid #4b5563; /* gray-600 border */
+}
